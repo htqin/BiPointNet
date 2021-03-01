@@ -1,0 +1,28 @@
+model:
+   type: 'BiPointNetSemSegLSREMax'
+
+dataset:
+  type: 'S3DIS'
+  test_area: 'All'
+
+train:
+  type: 'train_sem_seg'
+
+scale_dynamic_init: True
+
+test:
+  type: 'test_sem_seg'
+
+dataloader:
+  type: 'DataListLoader'
+  batch_size: 128
+  num_workers: 16
+
+optimizer:
+  type: 'Adam'
+  lr: 0.001
+
+lr_scheduler:
+  type: 'CosineAnnealingLR'
+  T_max: 128
+  eta_min: 0

@@ -1,0 +1,27 @@
+model:
+   type: 'PointNetSemSegMean'
+
+dataset:
+  type: 'S3DIS'
+  test_area: 'All'
+
+train:
+  type: 'train_sem_seg'
+
+test:
+  type: 'test_sem_seg'
+
+dataloader:
+  type: 'DataListLoader'
+  batch_size: 128
+  num_workers: 16
+
+optimizer:
+  type: 'Adam'
+  lr: 0.001
+  weight_decay: 0.0001
+
+lr_scheduler:
+  type: 'StepLR'
+  step_size: 10
+  gamma: 0.7

@@ -1,0 +1,27 @@
+model:
+   type: 'BiPointNetPartSegBNNMax'
+
+dataset:
+  type: 'ShapeNet'
+  categories: 'All'
+  repeat_to: 4096
+
+train:
+  type: 'train_part_seg'
+
+test:
+  type: 'test_part_seg'
+
+dataloader:
+  type: 'DataListLoader'
+  batch_size: 96
+  num_workers: 16
+
+optimizer:
+  type: 'Adam'
+  lr: 0.001
+
+lr_scheduler:
+  type: 'CosineAnnealingLR'
+  T_max: 250
+  eta_min: 0

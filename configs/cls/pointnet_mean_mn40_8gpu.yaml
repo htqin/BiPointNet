@@ -1,0 +1,11 @@
+model:
+  type: 'PointNetMean'
+
+dataset:
+  type: 'ModelNet2'
+  name: '40'
+
+dataloader:
+  type: 'DataListLoader' 
+  batch_size: 256
+  num_workers: 16

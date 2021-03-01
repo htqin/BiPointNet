@@ -1,0 +1,22 @@
+model:
+  type: 'BiPointNetVanillaLSREMax'
+
+#scale_dynamic_init: True
+
+dataset:
+  type: 'ModelNet2'
+  name: '40'
+
+dataloader:
+  type: 'DataListLoader' 
+  batch_size: 256
+  num_workers: 16
+
+optimizer:
+  type: 'Adam'
+  lr: 0.001
+
+lr_scheduler:
+  type: 'CosineAnnealingLR'
+  T_max: 200
+  eta_min: 0
